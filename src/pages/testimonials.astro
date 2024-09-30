@@ -1,0 +1,30 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+
+export const testimonials = [
+  {
+    name: "John Smith",
+    feedback: "Green Grove Construction transformed my backyard! Their team was professional, and the quality of their work was exceptional.",
+    location: "Santa Barbara, CA"
+  },
+  {
+    name: "Emily Johnson",
+    feedback: "We hired them for landscaping and couldn't be happier. They exceeded our expectations with their attention to detail.",
+    location: "Goleta, CA"
+  },
+  {
+    name: "Michael Brown",
+    feedback: "Great experience! The team was punctual, friendly, and completed the project on time. Highly recommended.",
+    location: "Orcutt, CA"
+  }
+];
+---
+
+<Layout title="Testimonials">
+  <section class="py-16 bg-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold text-gray-800 mb-8">What Our Clients Say</h2>
+      <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial) => (
+          <div class="sh
