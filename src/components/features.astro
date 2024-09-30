@@ -6,7 +6,7 @@ export const services = [
     title: "Landscaping",
     description:
       "We create beautiful, sustainable landscapes to enhance the beauty of your property.",
-    icon: "bx:bxs-leaf", // Make sure to use the correct icon prefix
+    icon: "bx:bxs-leaf", // Ensure correct icon prefix
   },
   {
     title: "Mowing & Lawn Maintenance",
@@ -36,7 +36,7 @@ export const services = [
     title: "Fence Repair & Installation",
     description:
       "Our fencing services include installation, repairs, and maintenance for all types of fences.",
-    icon: "bxs-traffic-barrier",
+    icon: "bx:bxs-traffic-barrier", // Correct prefix for the icon
   },
 ];
 ---
@@ -47,11 +47,6 @@ export const services = [
     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
       {services.map((service) => (
         <div class="p-6 rounded-lg shadow-lg border hover:shadow-2xl transition">
-          <Icon class="text-green-600 text-4xl mb-4" name={service.icon} /> <!-- Updated icon usage -->
+          <Icon class="text-green-600 text-4xl mb-4" name={service.icon} />
           <h3 class="text-2xl font-bold mb-2">{service.title}</h3>
-          <p class="text-gray-600">{service.description}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+          <p class="text-gray-600">{service.descrip
