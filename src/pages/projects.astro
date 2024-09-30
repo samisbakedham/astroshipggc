@@ -1,0 +1,38 @@
+---
+export const projects = [
+  {
+    title: "Modern Backyard Fencing",
+    description: "Installed a stylish and durable wooden fence for a residential backyard.",
+    image: "/assets/projects/fence.png", // Replace with our actual project images
+  },
+  {
+    title: "Custom Landscaping Design",
+    description: "Created a beautiful landscape design featuring riverstone pebbles and native plants.",
+    image: "/assets/projects/landscape.png",
+  },
+  {
+    title: "Sod Removal",
+    description: "Renovated an existing sod lawn to prepare for pebbles.",
+    image: "/assets/projects/sodremoval.png",
+  },
+];
+---
+
+<Layout title="Our Projects">
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto text-center">
+      <h2 class="text-4xl font-bold text-gray-800 mb-8">Our Projects</h2>
+      <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
+        {projects.map((project) => (
+          <div class="shadow-lg rounded-lg overflow-hidden">
+            <img src={project.image} alt={project.title} class="w-full h-56 object-cover"/>
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-2">{project.title}</h3>
+              <p class="text-gray-600">{project.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
