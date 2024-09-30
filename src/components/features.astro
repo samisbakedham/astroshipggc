@@ -1,68 +1,55 @@
 ---
-// @ts-ignore
-import { Icon } from "astro-icon/components";
-
-const features = [
+export const services = [
   {
-    title: "High-Quality Fencing",
+    title: "Landscaping",
     description:
-      "We specialize in crafting durable and beautiful fences to enhance your property's security and aesthetics.",
-    icon: "bx:bxs-shield-alt-2",
+      "We create beautiful, sustainable landscapes to enhance the beauty of your property.",
+    icon: "bx:bxs-leaf",
   },
   {
-    title: "Custom Construction",
+    title: "Mowing & Lawn Maintenance",
     description:
-      "Our team provides tailored construction solutions, ensuring every project meets your unique needs.",
+      "Keep your lawn looking pristine with our professional mowing and lawn care services.",
+    icon: "bx:bxs-landscape",
+  },
+  {
+    title: "Artificial Turf Installation",
+    description:
+      "Our high-quality artificial turf provides a lush, green lawn that’s low-maintenance and long-lasting.",
+    icon: "bx:bxs-grid",
+  },
+  {
+    title: "Subcontracting Services",
+    description:
+      "We offer subcontracting for various construction projects, ensuring quality and timely completion.",
+    icon: "bx:bx-building",
+  },
+  {
+    title: "General Construction",
+    description:
+      "From renovations to new builds, we provide a full range of general contracting services.",
     icon: "bx:bxs-buildings",
   },
   {
-    title: "Experienced Team",
+    title: "Fence Repair & Installation",
     description:
-      "With over 10 years of experience, we guarantee quality workmanship and timely project completion.",
-    icon: "bx:bx-hard-hat",
-  },
-  {
-    title: "Reliable & Trusted",
-    description:
-      "We are dedicated to delivering projects on time and within budget, ensuring customer satisfaction.",
-    icon: "bx:bxs-like",
-  },
-  {
-    title: "Free Consultation",
-    description:
-      "Get a free consultation and quote for your next fencing or construction project with no obligation.",
-    icon: "bx:bxs-chat",
-  },
-  {
-    title: "Fully Insured",
-    description:
-      "Green Grove Construction is fully insured, giving you peace of mind throughout the project.",
-    icon: "bx:bxs-check-shield",
+      "Our fencing services include installation, repairs, and maintenance for all types of fences.",
+    icon: "bx:bxs-traffic-barrier",
   },
 ];
 ---
 
-<div class="mt-16 md:mt-0">
-  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Why Choose Green Grove Construction?
-  </h2>
-  <p class="text-lg mt-4 text-slate-600">
-    We bring expertise, quality, and reliability to every project, ensuring the highest standards in fencing and construction services.
-  </p>
-</div>
-
-<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
-  {
-    features.map((item) => (
-      <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-green-700 rounded-full p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
+<section id="services" class="py-16 bg-white">
+  <div class="container mx-auto text-center">
+    <h2 class="text-4xl font-bold text-gray-800 mb-8">Our Services</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <div class="p-6 rounded-lg shadow-lg border hover:shadow-2xl transition">
+          <i class={`bx ${service.icon} text-green-600 text-4xl mb-4`}></i>
+          <h3 class="text-2xl font-bold mb-2">{service.title}</h3>
+          <p class="text-gray-600">{service.description}</p>
         </div>
-        <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
-        </div>
-      </div>
-    ))
-  }
-</div>
+      ))}
+    </div>
+  </div>
+</section>
