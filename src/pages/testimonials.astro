@@ -27,4 +27,13 @@ export const testimonials = [
       <h2 class="text-4xl font-bold text-gray-800 mb-8">What Our Clients Say</h2>
       <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
         {testimonials.map((testimonial) => (
-          <div class="sh
+          <div class="shadow-lg rounded-lg p-6 bg-gray-50">
+            <p class="text-gray-600 italic mb-4">"{testimonial.feedback}"</p>
+            <h3 class="font-bold text-lg">{testimonial.name}</h3>
+            <p class="text-sm text-gray-500">{testimonial.location}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
