@@ -4,51 +4,50 @@ import { Icon } from "astro-icon/components";
 
 const features = [
   {
-    title: "Bring Your Own Framework",
+    title: "High-Quality Fencing",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "bx:bxs-briefcase",
+      "We specialize in crafting durable and beautiful fences to enhance your property's security and aesthetics.",
+    icon: "bx:bxs-shield-alt-2",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "Custom Construction",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "bx:bxs-window-alt",
+      "Our team provides tailored construction solutions, ensuring every project meets your unique needs.",
+    icon: "bx:bxs-buildings",
   },
   {
-    title: "On-Demand Components",
+    title: "Experienced Team",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
-    icon: "bx:bxs-data",
+      "With over 10 years of experience, we guarantee quality workmanship and timely project completion.",
+    icon: "bx:bxs-hard-hat",
   },
   {
-    title: "Broad Integration",
+    title: "Reliable & Trusted",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-    icon: "bx:bxs-bot",
+      "We are dedicated to delivering projects on time and within budget, ensuring customer satisfaction.",
+    icon: "bx:bxs-like",
   },
   {
-    title: "SEO Enabled",
+    title: "Free Consultation",
     description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-    icon: "bx:bxs-file-find",
+      "Get a free consultation and quote for your next fencing or construction project with no obligation.",
+    icon: "bx:bxs-chat",
   },
   {
-    title: "Community",
+    title: "Fully Insured",
     description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "bx:bxs-user",
+      "Green Grove Construction is fully insured, giving you peace of mind throughout the project.",
+    icon: "bx:bxs-check-shield",
   },
 ];
 ---
 
 <div class="mt-16 md:mt-0">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Everything you need to start a website
+    Why Choose Green Grove Construction?
   </h2>
   <p class="text-lg mt-4 text-slate-600">
-    Astro comes batteries included. It takes the best parts of state-of-the-art
-    tools and adds its own innovations.
+    We bring expertise, quality, and reliability to every project, ensuring the highest standards in fencing and construction services.
   </p>
 </div>
 
@@ -56,11 +55,11 @@ const features = [
   {
     features.map((item) => (
       <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+        <div class="mt-1 bg-green-700 rounded-full p-2 w-8 h-8 shrink-0">
           <Icon class="text-white" name={item.icon} />
         </div>
         <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <h3 class="font-semibold text-lg">{item.title}</h3>
           <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
         </div>
       </div>
