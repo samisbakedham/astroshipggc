@@ -19,8 +19,8 @@ const resolvedImageWithDomain = new URL(
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Green Grove Construction"
-  : "Green Grove Construction - Quality Fencing & Landscaping Services";
+  ? title + " | " + "Walker and Cole Construction"
+  : "Walker and Cole Construction - Quality Fencing & Landscaping Services";
 ---
 
 <!DOCTYPE html>
@@ -34,7 +34,7 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Green Grove Construction offers high-quality fencing, landscaping, and construction services in Santa Barbara County."
+      description="Walker and Cole Construction offers high-quality fencing, landscaping, and construction services in Santa Barbara County."
       canonical={canonicalURL}
       twitter={{
         creator: "@GreenGroveConstruction", // Replace with your actual Twitter handle
@@ -45,11 +45,11 @@ const makeTitle = title
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Green Grove Construction - Quality Fencing & Landscaping Services`,
+          title: `Walker and Cole Construction - Quality Fencing & Landscaping Services`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Green Grove Construction Homepage Screenshot",
+          alt: "Walker and Cole Construction Homepage Screenshot",
         },
       }}
     />
