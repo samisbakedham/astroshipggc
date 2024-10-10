@@ -29,13 +29,13 @@ export const faqs = [
         {faqs.map((faq, index) => (
           <div class="border border-gray-300 rounded-lg">
             <button 
-              class="w-full text-left text-lg font-medium text-gray-800 p-4 focus:outline-none flex justify-between items-center"
-              onclick="document.getElementById('answer-{index}').classList.toggle('hidden')"
+              class="w-full text-left text-lg font-medium text-gray-800 p-4 flex justify-between items-center"
+              data-index={index}
             >
               {faq.question}
               <svg 
-                class="w-5 h-5 transform transition-transform" 
-                id={`icon-${index}`} 
+                class="w-5 h-5 transform transition-transform rotate-0" 
+                data-icon 
                 fill="none" 
                 stroke="currentColor" 
                 strokeWidth="2" 
@@ -49,8 +49,9 @@ export const faqs = [
               </svg>
             </button>
             <div 
-              id={`answer-${index}`} 
-              class="mt-2 text-gray-600 hidden px-4 pb-4"
+              class="mt-2 text-gray-600 hidden px-4 pb-4" 
+              data-answer
+              id={`answer-${index}`}
             >
               {faq.answer}
             </div>
@@ -59,4 +60,26 @@ export const faqs = [
       </div>
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqButtons = document.querySelectorAll('button[data-index]');
+
+      faqButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const index = button.getAttribute('data-index');
+          const answer = document.getElementById(`answer-${index}`);
+          const icon = button.querySelector('svg[data-icon]');
+
+          if (answer.classList.contains('hidden')) {
+            answer.classList.remove('hidden');
+            icon.classList.add('rotate-180');
+          } else {
+            answer.classList.add('hidden');
+            icon.classList.remove('rotate-180');
+          }
+        });
+      });
+    });
+  </script>
 </Layout>
