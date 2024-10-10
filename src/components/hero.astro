@@ -4,7 +4,7 @@ import heroImage from "assets/construction.svg"; // Ensure this points to an ima
 import Link from "@components/ui/link.astro";
 ---
 
-<main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24 bg-background">
+<main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24 bg-gray-100">
   <div class="py-6 md:order-1 hidden md:block max-w-md mx-auto">
     <Picture
       src={heroImage}
@@ -23,15 +23,15 @@ import Link from "@components/ui/link.astro";
     <p class="text-lg mt-4 text-secondary max-w-xl">
       From major construction projects to everyday household tasks, Walker and Cole Construction offers reliable, high-quality services across Santa Barbara County.
     </p>
-    <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+    <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
       <Link
         href="contact"
-        class="bg-[#FF7F11] text-white px-6 py-3 rounded-full font-bold inline-block hover:bg-[#E67300] hover:scale-105 transition duration-300 ease-in-out shadow-lg">
+        class="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-8 py-4 rounded-full font-bold inline-block text-lg hover:from-yellow-500 hover:to-orange-600 hover:scale-110 transition duration-300 ease-in-out shadow-xl">
         Get Your Free Quote
       </Link>
       <Link
         href="home-services"
-        class="bg-[#004643] text-white px-6 py-3 rounded-full font-bold inline-block hover:bg-[#003531] hover:scale-105 transition duration-300 ease-in-out shadow-lg">
+        class="border-2 border-teal-600 text-teal-600 px-8 py-4 rounded-full font-bold inline-block text-lg hover:bg-teal-600 hover:text-white hover:scale-110 transition duration-300 ease-in-out shadow-xl">
         Schedule a Home Service
       </Link>
     </div>
