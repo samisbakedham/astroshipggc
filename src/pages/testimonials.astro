@@ -2,38 +2,39 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 
+// Array of testimonials
 export const testimonials = [
   {
-    name: "John Smith",
-    feedback: "Walker and Cole Construction transformed my backyard! Their team was professional, and the quality of their work was exceptional.",
-    location: "Santa Barbara, CA"
+    name: "John Doe",
+    role: "Homeowner",
+    testimonial: "Walker and Cole Construction transformed our backyard. The quality of work and attention to detail were outstanding. We couldn't be happier with the results!",
   },
   {
-    name: "Emily Johnson",
-    feedback: "We hired them for landscaping and couldn't be happier. They exceeded our expectations with their attention to detail.",
-    location: "Goleta, CA"
+    name: "Jane Smith",
+    role: "Business Owner",
+    testimonial: "Professional, reliable, and skilled. Our commercial property renovation was handled with expertise and care. Highly recommend their services.",
   },
   {
-    name: "Michael Brown",
-    feedback: "Great experience! The team was punctual, friendly, and completed the project on time. Highly recommended.",
-    location: "Orcutt, CA"
-  }
+    name: "Mark Johnson",
+    role: "Landscaping Client",
+    testimonial: "Their landscaping team brought our vision to life. The artificial turf installation was done perfectly, and it looks amazing!",
+  },
 ];
 ---
 
 <Layout title="Testimonials">
-  <section class="py-16 bg-white">
-    <div class="container mx-auto text-center">
-      <h2 class="text-4xl font-bold text-secondary mb-8">What Our Clients Say</h2>
-      <div class="grid sm:grid-cols-1 md:grid-cols-3 gap-8">
-        {testimonials.map((testimonial) => (
-          <div class="shadow-lg rounded-lg p-6 bg-gray-50">
-            <p class="text-gray-600 italic mb-4">"{testimonial.feedback}"</p>
-            <h3 class="font-bold text-lg">{testimonial.name}</h3>
-            <p class="text-sm text-gray-500">{testimonial.location}</p>
+  <Container>
+    <section class="py-16 bg-background">
+      <h2 class="text-4xl font-bold text-primary text-center mb-8">Client Testimonials</h2>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} class="p-6 border border-secondary rounded-lg bg-white shadow-sm transition hover:shadow-md">
+            <p class="text-secondary mb-4">"{testimonial.testimonial}"</p>
+            <div class="text-primary font-bold">{testimonial.name}</div>
+            <div class="text-sm text-gray-500">{testimonial.role}</div>
           </div>
         ))}
       </div>
-    </div>
-  </section>
+    </section>
+  </Container>
 </Layout>
