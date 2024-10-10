@@ -3,7 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 
-// Modify this to reflect your company's background and mission
+// Company mission and description
 const aboutDescription = `
   With over 10 years of experience, Walker and Cole Construction has been providing top-notch construction, landscaping, and fencing services in Santa Barbara County. Our team is dedicated to delivering excellence in every project, with a focus on quality, reliability, and customer satisfaction. From residential renovations to commercial builds, we bring our expertise and passion to every task.
 `;
@@ -11,34 +11,31 @@ const aboutDescription = `
 
 <Layout title="About">
   <Container>
-    <Sectionhead title="About Us" subtitle="Professional Construction & Landscaping Services" />
+    <Sectionhead title="Walker and Cole Construction" subtitle="Our Mission" />
 
-    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-secondary">
-        Our Mission
-      </h2>
-      <p class="text-lg leading-relaxed text-slate-500">
+    <div class="mx-auto max-w-3xl mt-12">
+      <p class="text-lg leading-relaxed text-gray-600 text-center mb-10">
         {aboutDescription}
       </p>
     </div>
-    <!-- You can remove the team section if it's not relevant -->
+
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">
-      <div class="group">
+      <div class="group p-4 rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-md transition">
         <div class="text-center">
-          <h2 class="text-lg text-secondary">Samuel Safahi</h2>
-          <h3 class="text-sm text-slate-500">Founder & CEO</h3>
+          <h2 class="text-xl font-semibold text-green-700 mb-1">Samuel Safahi</h2>
+          <h3 class="text-sm text-gray-500">Founder & CEO</h3>
         </div>
       </div>
-      <div class="group">
+      <div class="group p-4 rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-md transition">
         <div class="text-center">
-          <h2 class="text-lg text-secondary">Zachary Lakin</h2>
-          <h3 class="text-sm text-slate-500">Project Manager</h3>
+          <h2 class="text-xl font-semibold text-green-700 mb-1">Zachary Lakin</h2>
+          <h3 class="text-sm text-gray-500">Project Manager</h3>
         </div>
       </div>
-      <div class="group">
+      <div class="group p-4 rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-md transition">
         <div class="text-center">
-          <h2 class="text-lg text-secondary">Dominic Gary</h2>
-          <h3 class="text-sm text-slate-500">Lead Technician</h3>
+          <h2 class="text-xl font-semibold text-green-700 mb-1">Dominic Gary</h2>
+          <h3 class="text-sm text-gray-500">Lead Technician</h3>
         </div>
       </div>
     </div>
