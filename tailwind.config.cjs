@@ -5,11 +5,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#006400',       // Deep Green
-        secondary: '#333333',     // Dark Gray
-        accent: '#F0F0F0',        // Light Gray
+        primary: '#1f3b4d',       // Deep Navy Blue
+        secondary: '#4a4a4a',     // Earthy Gray
+        accent: '#d97706',        // Burnt Orange
+        background: '#f4f4f2',    // Light Beige
         textLight: '#FFFFFF',     // White
-        textDark: '#000000',      // Black
+        textDark: '#2b2b2b',      // Dark Charcoal
       },
       fontFamily: {
         sans: [
