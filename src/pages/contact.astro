@@ -10,32 +10,63 @@ import { Icon } from "astro-icon/components";
   <Container>
     <Sectionhead>
       <Fragment slot="title">Contact Us</Fragment>
-      <Fragment slot="desc">We're here to help with your construction needs.</Fragment>
+      <Fragment slot="desc">We're here to help with your construction needs. Feel free to reach out to us through any of the channels below.</Fragment>
     </Sectionhead>
 
     <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-4xl mt-16">
       <div>
         <h2 class="font-medium text-2xl text-primary">Contact Walker and Cole Construction</h2>
         <p class="text-lg leading-relaxed text-textDark mt-3">
-          Have something to say? We're here to help. Fill out the form, send us an email, or give us a call.
+          Have something to say? We're here to help. Fill out the form, send us an email, or give us a call. We pride ourselves on our responsiveness and commitment to customer satisfaction.
         </p>
         <div class="mt-5">
           <div class="flex items-center mt-2 space-x-2 text-textDark">
-            <Icon class="text-secondary w-4 h-4" name="uil:map-marker" />
+            <Icon class="text-secondary w-5 h-5" name="uil:map-marker" />
             <span>1234 Green Grove Lane, Santa Barbara, CA</span>
           </div>
           <div class="flex items-center mt-2 space-x-2 text-textDark">
-            <Icon class="text-secondary w-4 h-4" name="uil:envelope" />
+            <Icon class="text-secondary w-5 h-5" name="uil:envelope" />
             <a href="mailto:info@walker-cole.com" class="hover:text-accent1">info@walker-cole.com</a>
           </div>
           <div class="flex items-center mt-2 space-x-2 text-textDark">
-            <Icon class="text-secondary w-4 h-4" name="uil:phone" />
+            <Icon class="text-secondary w-5 h-5" name="uil:phone" />
             <a href="tel:+1234567890" class="hover:text-accent1">+1 (234) 567-890</a>
           </div>
+          <div class="flex items-center mt-2 space-x-2 text-textDark">
+            <Icon class="text-secondary w-5 h-5" name="uil:clock" />
+            <span>Office Hours: Mon - Fri, 8:00 AM - 6:00 PM</span>
+          </div>
+        </div>
+        <div class="mt-8 bg-primary p-6 rounded-md text-white">
+          <h3 class="text-xl font-bold">Why Choose Us?</h3>
+          <ul class="list-disc pl-5 mt-3 space-y-2">
+            <li>Experienced professionals dedicated to quality workmanship.</li>
+            <li>Prompt and reliable customer support for all your inquiries.</li>
+            <li>Competitive pricing without compromising on quality.</li>
+          </ul>
         </div>
       </div>
       <div>
         <Contactform />
+      </div>
+    </div>
+
+    <div class="mt-16 text-center">
+      <h3 class="text-2xl font-bold text-primary mb-4">Our Locations</h3>
+      <p class="text-lg text-textDark mb-6">We proudly serve all of Santa Barbara County and surrounding areas.</p>
+      <div class="flex flex-wrap justify-center gap-6">
+        <div class="bg-background p-4 rounded shadow-md w-64">
+          <h4 class="text-lg font-bold text-primary mb-2">Santa Barbara</h4>
+          <p class="text-textDark">1234 Green Grove Lane<br />Santa Barbara, CA 93101</p>
+        </div>
+        <div class="bg-background p-4 rounded shadow-md w-64">
+          <h4 class="text-lg font-bold text-primary mb-2">Goleta</h4>
+          <p class="text-textDark">5678 Blue Sky Road<br />Goleta, CA 93117</p>
+        </div>
+        <div class="bg-background p-4 rounded shadow-md w-64">
+          <h4 class="text-lg font-bold text-primary mb-2">Carpinteria</h4>
+          <p class="text-textDark">9101 Coastal Ave<br />Carpinteria, CA 93013</p>
+        </div>
       </div>
     </div>
   </Container>
