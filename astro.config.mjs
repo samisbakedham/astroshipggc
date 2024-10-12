@@ -18,13 +18,8 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        '@stripe/stripe-js': '@stripe/stripe-js',
+        '@stripe/stripe-js': '/node_modules/@stripe/stripe-js',
       }
-    },
-    build: {
-      rollupOptions: {
-        external: ['@stripe/stripe-js'],
-      },
-    },
+    }
   },
 });
