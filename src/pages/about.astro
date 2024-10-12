@@ -5,39 +5,75 @@ import Sectionhead from "@components/sectionhead.astro";
 
 // Company mission and description
 const aboutDescription = `
-  With over 10 years of experience, Walker and Cole Construction has been providing top-notch construction, landscaping, and fencing services in Santa Barbara County. Our team is dedicated to delivering excellence in every project, with a focus on quality, reliability, and customer satisfaction. From residential renovations to commercial builds, we bring our expertise and passion to every task.
+  With over 10 years of experience, Walker and Cole Construction has been providing top-notch construction, landscaping, and fencing services in Santa Barbara County and San Luis Obispo. As a new unlicensed contractor, we are committed to delivering outstanding quality and customer satisfaction at affordable rates. From residential renovations to commercial builds, we bring our expertise and passion to every task, ensuring that every project exceeds expectations.
 `;
+
+const visionStatement = `
+  Our vision is to become the most trusted name in construction services in the San Luis Obispo and Santa Barbara areas by consistently delivering exceptional results and building lasting relationships with our clients.
+`;
+
+const values = [
+  "Integrity in every action we take.",
+  "Excellence in craftsmanship and customer service.",
+  "Transparency and open communication with our clients.",
+  "Commitment to the communities we serve."
+];
+
+const teamMembers = [
+  {
+    name: "Samuel Safahi",
+    title: "Founder & CEO",
+    description: "With a passion for construction and a decade of experience in the industry, Samuel leads our company with dedication and a hands-on approach."
+  },
+  {
+    name: "Zachary Lakin",
+    title: "Project Manager",
+    description: "Zachary oversees all our projects, ensuring timelines are met and quality is maintained, with a focus on effective communication and problem-solving."
+  },
+  {
+    name: "Dominic Gary",
+    title: "Lead Technician",
+    description: "Dominic brings extensive technical expertise to the team, making sure each job is done right the first time with precision and skill."
+  }
+];
 ---
 
 <Layout title="About">
   <Container>
     <Sectionhead title="Walker and Cole Construction" subtitle="Our Mission" />
 
-    <div class="mx-auto max-w-2xl mt-10 text-center">
-      <p class="text-lg leading-relaxed text-gray-600 mb-10">
+    <div class="mx-auto max-w-3xl mt-10 text-center">
+      <p class="text-lg leading-relaxed text-textDark mb-10">
         {aboutDescription}
       </p>
+      <div class="bg-primary p-8 rounded-lg text-white mb-10">
+        <h3 class="text-2xl font-bold mb-4">Our Vision</h3>
+        <p class="text-lg leading-relaxed">
+          {visionStatement}
+        </p>
+      </div>
+      <div class="bg-secondary p-8 rounded-lg text-white mb-10">
+        <h3 class="text-2xl font-bold mb-4">Our Values</h3>
+        <ul class="list-disc pl-5 text-left text-lg leading-relaxed">
+          {values.map((value) => (
+            <li>{value}</li>
+          ))}
+        </ul>
+      </div>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8 mx-auto max-w-5xl mt-12">
-      <div class="group p-6 rounded-lg border border-gray-200 bg-white shadow-md hover:shadow-lg transition">
-        <div class="text-center">
-          <h2 class="text-xl font-bold text-green-700 mb-1">Samuel Safahi</h2>
-          <h3 class="text-sm text-gray-500">Founder & CEO</h3>
+    <div class="grid md:grid-cols-3 gap-8 mx-auto max-w-6xl mt-12">
+      {teamMembers.map((member) => (
+        <div class="group p-8 rounded-lg border border-gray-300 bg-background shadow-md hover:shadow-lg transition">
+          <div class="text-center">
+            <h2 class="text-2xl font-bold text-primary mb-2">{member.name}</h2>
+            <h3 class="text-lg text-secondary mb-4">{member.title}</h3>
+            <p class="text-base text-textDark">
+              {member.description}
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="group p-6 rounded-lg border border-gray-200 bg-white shadow-md hover:shadow-lg transition">
-        <div class="text-center">
-          <h2 class="text-xl font-bold text-green-700 mb-1">Zachary Lakin</h2>
-          <h3 class="text-sm text-gray-500">Project Manager</h3>
-        </div>
-      </div>
-      <div class="group p-6 rounded-lg border border-gray-200 bg-white shadow-md hover:shadow-lg transition">
-        <div class="text-center">
-          <h2 class="text-xl font-bold text-green-700 mb-1">Dominic Gary</h2>
-          <h3 class="text-sm text-gray-500">Lead Technician</h3>
-        </div>
-      </div>
+      ))}
     </div>
   </Container>
 </Layout>
