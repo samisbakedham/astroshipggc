@@ -12,7 +12,14 @@ export default defineConfig({
     mdx(),
     sitemap(),
     icon({
-      sets: ['bx', 'bxs'] // Include the icon sets you want to use
+      sets: ['bx', 'bxs'], // Include the icon sets you want to use
     }),
   ],
+  vite: {
+    build: {
+      rollupOptions: {
+        external: ['@stripe/stripe-js'],
+      },
+    },
+  },
 });
