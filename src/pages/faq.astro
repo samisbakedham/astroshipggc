@@ -5,19 +5,35 @@ import Container from "@components/container.astro";
 export const faqs = [
   {
     question: "What areas do you serve?",
-    answer: "We provide services throughout Santa Barbara County and the surrounding areas."
+    answer: "We provide services throughout Santa Barbara County, San Luis Obispo, and the surrounding areas."
   },
   {
     question: "Are you licensed and insured?",
-    answer: "Yes, Walker and Cole Construction is fully licensed and insured for your peace of mind."
+    answer: "Walker and Cole Construction is a new, unlicensed contractor, but we ensure all our work is performed with the highest standards for your peace of mind."
   },
   {
     question: "How can I get a quote for my project?",
-    answer: "You can request a free consultation through our website or contact us directly by phone or email."
+    answer: "You can request a free consultation through our website, give us a call, or send us an email. We aim to respond promptly to all inquiries."
   },
   {
     question: "What services do you offer?",
-    answer: "We specialize in fencing, landscaping, artificial turf installation, general contracting, mowing, and more."
+    answer: "We specialize in fencing, landscaping, artificial turf installation, general contracting, mowing, and a wide range of home improvement services."
+  },
+  {
+    question: "Why should I choose Walker and Cole Construction?",
+    answer: "We are committed to providing excellent craftsmanship, reliability, and personalized service. Our team takes pride in exceeding customer expectations and building lasting relationships."
+  },
+  {
+    question: "What is your process for starting a project?",
+    answer: "Our process begins with an initial consultation to understand your needs and vision. We then provide a detailed plan and estimate, ensuring transparency and alignment with your goals."
+  },
+  {
+    question: "Do you offer warranty on your work?",
+    answer: "Yes, we stand by the quality of our work and offer warranties on certain services. Please contact us for more details regarding warranty coverage."
+  },
+  {
+    question: "How long does a typical project take?",
+    answer: "Project timelines vary depending on the scope and complexity. During the consultation, we provide a realistic timeline so you know what to expect."
   }
 ];
 ---
@@ -25,14 +41,17 @@ export const faqs = [
 <Layout title="FAQs">
   <Container>
     <section class="py-16 bg-background">
-      <h2 class="text-4xl font-bold text-primary text-center mb-8">Frequently Asked Questions</h2>
-      <div class="space-y-4">
+      <h2 class="text-4xl font-bold text-primary text-center mb-12">Frequently Asked Questions</h2>
+      <p class="text-lg text-center text-textDark max-w-2xl mx-auto mb-12">
+        We understand that you may have questions about our services and processes. Below are some of the most frequently asked questions we receive. If you have further questions, don't hesitate to reach out!
+      </p>
+      <div class="space-y-8 max-w-4xl mx-auto">
         {faqs.map((faq, index) => (
-          <details key={index} class="border border-secondary rounded-lg p-4 bg-white shadow-sm transition hover:shadow-md">
-            <summary class="font-bold text-primary cursor-pointer">
+          <details key={index} class="border border-gray-300 rounded-lg p-6 bg-white shadow-md hover:shadow-lg transition">
+            <summary class="font-semibold text-primary cursor-pointer text-lg">
               {faq.question}
             </summary>
-            <p class="mt-2 text-secondary">{faq.answer}</p>
+            <p class="mt-4 text-textDark leading-relaxed">{faq.answer}</p>
           </details>
         ))}
       </div>
