@@ -19,6 +19,7 @@
     "@iconify-json/bx": "^1.1.10",
     "@iconify-json/simple-icons": "^1.1.102",
     "@iconify-json/uil": "^1.1.8",
+    "@stripe/stripe-js": "^4.8.0",
     "@tailwindcss/typography": "^0.5.13",
     "astro": "^4.8.7",
     "astro-icon": "^1.1.0",
