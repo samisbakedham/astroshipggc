@@ -18,8 +18,14 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        '@stripe/stripe-js': '/node_modules/@stripe/stripe-js',
+        '@stripe/stripe-js': '@stripe/stripe-js',
+        '/stripeBooking.js': '/absolute/path/to/stripeBooking.js' // Make sure this path is correct
       }
-    }
+    },
+    build: {
+      rollupOptions: {
+        external: ['@stripe/stripe-js'],
+      },
+    },
   },
 });
