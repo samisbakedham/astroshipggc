@@ -1,0 +1,46 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Button from "@components/ui/button.astro";
+---
+
+<Layout title="Book Our Services">
+  <Container>
+    <section class="py-16 bg-background">
+      <h2 class="text-4xl font-bold text-primary text-center mb-12">Instantly Book Our Services</h2>
+      <p class="text-lg text-center text-textDark max-w-2xl mx-auto mb-12">
+        We now offer instant booking for some of our most popular services. Select a service below to schedule and pay conveniently with Apple Pay.
+      </p>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center">
+          <h4 class="text-2xl font-bold text-primary mb-4">Landscaping</h4>
+          <p class="text-textDark mb-6">Transform your outdoor space with our expert landscaping services.</p>
+          <Button href="/book/landscaping" type="button" class="bg-accent1 text-white hover:bg-accent2 inline-block px-8 py-4 rounded-full font-bold">
+            Book Now
+          </Button>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center">
+          <h4 class="text-2xl font-bold text-primary mb-4">Mowing</h4>
+          <p class="text-textDark mb-6">Keep your lawn looking pristine with our regular mowing services.</p>
+          <Button href="/book/mowing" type="button" class="bg-accent1 text-white hover:bg-accent2 inline-block px-8 py-4 rounded-full font-bold">
+            Book Now
+          </Button>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center">
+          <h4 class="text-2xl font-bold text-primary mb-4">Tree Planting</h4>
+          <p class="text-textDark mb-6">Add beauty and value to your property with our tree planting services.</p>
+          <Button href="/book/tree-planting" type="button" class="bg-accent1 text-white hover:bg-accent2 inline-block px-8 py-4 rounded-full font-bold">
+            Book Now
+          </Button>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center">
+          <h4 class="text-2xl font-bold text-primary mb-4">General Maintenance</h4>
+          <p class="text-textDark mb-6">Book our maintenance services to keep your property in top shape.</p>
+          <Button href="/book/maintenance" type="button" class="bg-accent1 text-white hover:bg-accent2 inline-block px-8 py-4 rounded-full font-bold">
+            Book Now
+          </Button>
+        </div>
+      </div>
+    </section>
+  </Container>
+</Layout>
