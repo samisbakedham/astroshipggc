@@ -1,7 +1,11 @@
-require("dotenv").config();
-const express = require("express");
-const bodyParser = require("body-parser");
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+import dotenv from "dotenv";
+import express from "express";
+import bodyParser from "body-parser";
+import Stripe from "stripe";
+
+dotenv.config();
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
 app.use(bodyParser.json());
@@ -52,7 +56,9 @@ app.post("/api/create-payment-intent", async (req, res) => {
 // Exporting the handleBooking function
 import { loadStripe } from "@stripe/stripe-js";
 
-const stripePromise = loadStripe("pk_live_51Q8tiiD3zf1H8CLSz1p44ij9VcimA1ZyWqyHknXNsd2wNJqvY2GxTIE5QG0410dyS9512jiycdSBLgFjgidoQzvz00GAtZMlHu");
+const stripePromise = loadStripe(
+  "pk_live_51Q8tiiD3zf1H8CLSz1p44ij9VcimA1ZyWqyHknXNsd2wNJqvY2GxTIE5QG0410dyS9512jiycdSBLgFjgidoQzvz00GAtZMlHu"
+);
 
 export async function handleBooking(priceId) {
   const stripe = await stripePromise;
