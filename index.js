@@ -1,7 +1,11 @@
-require("dotenv").config();
-const express = require("express");
-const bodyParser = require("body-parser");
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+import dotenv from "dotenv";
+import express from "express";
+import bodyParser from "body-parser";
+import Stripe from "stripe";
+
+dotenv.config();
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
 app.use(bodyParser.json());
@@ -15,14 +19,15 @@ app.use((req, res, next) => {
   next();
 });
 
-app.post("/create-payment-intent", async (req, res) => {
-  const { amount } = req.body;
+// Create Payment Intent Endpoint
+app.post("/api/create-payment-intent", async (req, res) => {
+  const { amount, currency, payment_method_types } = req.body;
 
   try {
     const paymentIntent = await stripe.paymentIntents.create({
       amount,
-      currency: "usd",
-      payment_method_types: ["card"],
+      currency: currency || "usd",
+      payment_method_types: payment_method_types || ["card"],
     });
 
     res.send({
