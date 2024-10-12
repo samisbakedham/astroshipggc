@@ -6,6 +6,15 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const app = express();
 app.use(bodyParser.json());
 
+// Content Security Policy Middleware
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; script-src 'self' https://js.stripe.com; connect-src 'self' https://api.stripe.com; style-src 'self'; frame-src https://js.stripe.com"
+  );
+  next();
+});
+
 app.post("/create-payment-intent", async (req, res) => {
   const { amount } = req.body;
 
