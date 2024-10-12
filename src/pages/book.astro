@@ -3,7 +3,6 @@ import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Button from "@components/ui/button.astro";
 import { loadStripe } from "@stripe/stripe-js";
-import { useState } from "react";
 ---
 
 const stripePromise = loadStripe("YOUR_PUBLIC_STRIPE_KEY");
@@ -16,26 +15,56 @@ const stripePromise = loadStripe("YOUR_PUBLIC_STRIPE_KEY");
         We now offer instant booking for some of our most popular services. Select a service below to schedule and pay conveniently with Apple Pay.
       </p>
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        {services.map(service => (
-          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center" key={service.name}>
-            <h4 class="text-2xl font-bold text-primary mb-4">{service.name}</h4>
-            <p class="text-textDark mb-6">{service.description}</p>
-            <Button
-              onClick={() => handleBooking(service.priceId)}
-              type="button"
-              class="bg-accent1 text-white hover:bg-accent2 inline-block px-8 py-4 rounded-full font-bold">
-              Book Now
-            </Button>
-          </div>
-        ))}
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center">
+          <h4 class="text-2xl font-bold text-primary mb-4">Landscaping</h4>
+          <p class="text-textDark mb-6">Transform your outdoor space with our expert landscaping services.</p>
+          <Button
+            onClick={() => handleBooking("price_12345")} // Replace "price_12345" with your actual price ID
+            type="button"
+            class="bg-accent1 text-white hover:bg-accent2 inline-block px-8 py-4 rounded-full font-bold"
+          >
+            Book Now
+          </Button>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center">
+          <h4 class="text-2xl font-bold text-primary mb-4">Mowing</h4>
+          <p class="text-textDark mb-6">Keep your lawn looking pristine with our regular mowing services.</p>
+          <Button
+            onClick={() => handleBooking("price_67890")} // Replace "price_67890" with your actual price ID
+            type="button"
+            class="bg-accent1 text-white hover:bg-accent2 inline-block px-8 py-4 rounded-full font-bold"
+          >
+            Book Now
+          </Button>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center">
+          <h4 class="text-2xl font-bold text-primary mb-4">Tree Planting</h4>
+          <p class="text-textDark mb-6">Add beauty and value to your property with our tree planting services.</p>
+          <Button
+            onClick={() => handleBooking("price_abcde")} // Replace "price_abcde" with your actual price ID
+            type="button"
+            class="bg-accent1 text-white hover:bg-accent2 inline-block px-8 py-4 rounded-full font-bold"
+          >
+            Book Now
+          </Button>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition text-center">
+          <h4 class="text-2xl font-bold text-primary mb-4">General Maintenance</h4>
+          <p class="text-textDark mb-6">Book our maintenance services to keep your property in top shape.</p>
+          <Button
+            onClick={() => handleBooking("price_fghij")} // Replace "price_fghij" with your actual price ID
+            type="button"
+            class="bg-accent1 text-white hover:bg-accent2 inline-block px-8 py-4 rounded-full font-bold"
+          >
+            Book Now
+          </Button>
+        </div>
       </div>
     </section>
   </Container>
 </Layout>
 
 <script>
-  import { onMount } from 'astro';
-
   async function handleBooking(priceId) {
     const stripe = await stripePromise;
     const response = await fetch("/create-payment-intent", {
@@ -59,27 +88,4 @@ const stripePromise = loadStripe("YOUR_PUBLIC_STRIPE_KEY");
       console.error(result.error.message);
     }
   }
-
-  const services = [
-    {
-      name: "Landscaping",
-      description: "Transform your outdoor space with our expert landscaping services.",
-      priceId: "price_12345", // Replace with the Stripe price ID
-    },
-    {
-      name: "Mowing",
-      description: "Keep your lawn looking pristine with our regular mowing services.",
-      priceId: "price_67890", // Replace with the Stripe price ID
-    },
-    {
-      name: "Tree Planting",
-      description: "Add beauty and value to your property with our tree planting services.",
-      priceId: "price_abcde", // Replace with the Stripe price ID
-    },
-    {
-      name: "General Maintenance",
-      description: "Book our maintenance services to keep your property in top shape.",
-      priceId: "price_fghij", // Replace with the Stripe price ID
-    },
-  ];
 </script>
