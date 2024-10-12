@@ -4,7 +4,7 @@ const stripePromise = loadStripe("pk_live_51Q8tiiD3zf1H8CLSz1p44ij9VcimA1ZyWqyHk
 
 export async function handleBooking(priceId) {
   const stripe = await stripePromise;
-  const response = await fetch("http://localhost:5000/create-payment-intent", {
+  const response = await fetch("https://www.walker-cole.com/create-payment-intent", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
