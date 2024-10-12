@@ -1,6 +1,12 @@
-// /api/create-payment-intent.js
 import { buffer } from 'micro';
+import Cors from 'micro-cors';
 import Stripe from 'stripe';
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
+const cors = Cors({
+  allowMethods: ['POST', 'HEAD'],
+});
 
 export const config = {
   api: {
@@ -8,20 +14,16 @@ export const config = {
   },
 };
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: '2022-11-15',
-});
-
-export default async function handler(req, res) {
+const handler = async (req, res) => {
   if (req.method === 'POST') {
     try {
-      const rawBody = await buffer(req);
-      const body = JSON.parse(rawBody.toString());
-      const { priceId } = body;
+      const buf = await buffer(req);
+      const data = JSON.parse(buf.toString());
+      const { priceId } = data;
 
-      // Create a PaymentIntent
+      // Create a PaymentIntent with the given price ID
       const paymentIntent = await stripe.paymentIntents.create({
-        amount: 5000, // Replace with appropriate amount based on priceId
+        amount: 5000, // Adjust the amount dynamically based on priceId if needed
         currency: 'usd',
         payment_method_types: ['card'],
       });
@@ -35,4 +37,6 @@ export default async function handler(req, res) {
     res.setHeader('Allow', 'POST');
     res.status(405).end('Method Not Allowed');
   }
-}
+};
+
+export default cors(handler);
