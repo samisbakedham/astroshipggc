@@ -70,9 +70,9 @@ const stripePromise = loadStripe("YOUR_PUBLIC_STRIPE_KEY");
     const response = await fetch("/create-payment-intent", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify({ amount: 5000 }), // Adjust the amount accordingly
+      body: JSON.stringify({ amount: 5000 }) // Adjust the amount accordingly
     });
 
     const { clientSecret } = await response.json();
@@ -81,7 +81,7 @@ const stripePromise = loadStripe("YOUR_PUBLIC_STRIPE_KEY");
       mode: "payment",
       lineItems: [{ price: priceId, quantity: 1 }],
       successUrl: `${window.location.origin}/success`,
-      cancelUrl: `${window.location.origin}/cancel`,
+      cancelUrl: `${window.location.origin}/cancel`
     });
 
     if (result.error) {
