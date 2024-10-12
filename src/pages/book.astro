@@ -5,8 +5,6 @@ import Button from "@components/ui/button.astro";
 import { loadStripe } from "@stripe/stripe-js";
 ---
 
-const stripePromise = loadStripe("pk_live_51Q8tiiD3zf1H8CLSz1p44ij9VcimA1ZyWqyHknXNsd2wNJqvY2GxTIE5QG0410dyS9512jiycdSBLgFjgidoQzvz00GAtZMlHu");
-
 <Layout title="Book Our Services">
   <Container>
     <section class="py-16 bg-background">
@@ -65,14 +63,18 @@ const stripePromise = loadStripe("pk_live_51Q8tiiD3zf1H8CLSz1p44ij9VcimA1ZyWqyHk
 </Layout>
 
 <script>
+  import { loadStripe } from "@stripe/stripe-js";
+
+  const stripePromise = loadStripe("pk_live_51Q8tiiD3zf1H8CLSz1p44ij9VcimA1ZyWqyHknXNsd2wNJqvY2GxTIE5QG0410dyS9512jiycdSBLgFjgidoQzvz00GAtZMlHu");
+
   async function handleBooking(priceId) {
     const stripe = await stripePromise;
     const response = await fetch("/create-payment-intent", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ amount: 5000 }) // Adjust the amount accordingly
+      body: JSON.stringify({ priceId }),
     });
 
     const { clientSecret } = await response.json();
@@ -81,7 +83,7 @@ const stripePromise = loadStripe("pk_live_51Q8tiiD3zf1H8CLSz1p44ij9VcimA1ZyWqyHk
       mode: "payment",
       lineItems: [{ price: priceId, quantity: 1 }],
       successUrl: `${window.location.origin}/success`,
-      cancelUrl: `${window.location.origin}/cancel`
+      cancelUrl: `${window.location.origin}/cancel`,
     });
 
     if (result.error) {
