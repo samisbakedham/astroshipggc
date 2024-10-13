@@ -6,14 +6,64 @@ import Hero from "@components/hero.astro";
 import Logos from "@components/logos.astro";
 import Layout from "@layouts/Layout.astro";
 import ArtificialGrass from "@components/artificial-grass.astro";
+import Testimonials from "@components/testimonials.astro";
+import { ref } from 'vue';
 ---
 
 <Layout title="Walker and Cole Construction">
-  <Container>
-    <Hero />
-    <ArtificialGrass />
-    <Features />
-    <Logos />
-    <Cta />
-  </Container>
+  <div :class="[$theme]">
+    <header>
+      <button @click="toggleTheme" class="theme-toggle-button">Toggle Theme</button>
+    </header>
+    <Container>
+      <Hero />
+      <ArtificialGrass />
+      <Features />
+      <Logos />
+      <Testimonials />
+      <Cta />
+    </Container>
+  </div>
 </Layout>
+
+<script setup>
+const $theme = ref('light-theme');
+
+function toggleTheme() {
+  $theme.value = $theme.value === 'light-theme' ? 'dark-theme' : 'light-theme';
+}
+</script>
+
+<style scoped>
+.light-theme {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+.dark-theme {
+  --background-color: #1a1a1a;
+  --text-color: #f1f1f1;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--background-color);
+}
+
+.theme-toggle-button {
+  background: none;
+  border: 1px solid var(--text-color);
+  padding: 0.5rem 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 1rem;
+}
+</style>

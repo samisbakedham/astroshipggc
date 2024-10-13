@@ -1,0 +1,56 @@
+---
+// This is the Testimonials component for Walker and Cole Construction website.
+---
+
+<template>
+    <section id="testimonials" class="testimonials-section">
+      <h2>Client Testimonials</h2>
+      <div class="testimonials-container">
+        <blockquote>
+          <p>"Walker and Cole Construction transformed our backyard into a beautiful space. Their attention to detail and quality craftsmanship is unmatched."</p>
+          <cite>- Jessica M.</cite>
+        </blockquote>
+        <blockquote>
+          <p>"Their artificial grass installation has made our lawn maintenance so much easier. We couldn't be happier with the result!"</p>
+          <cite>- David R.</cite>
+        </blockquote>
+        <blockquote>
+          <p>"The entire team was professional and courteous. They completed our fencing project on time and exceeded our expectations!"</p>
+          <cite>- Samantha T.</cite>
+        </blockquote>
+      </div>
+    </section>
+  </template>
+  
+  <style scoped>
+  .testimonials-section {
+    padding: 2rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .testimonials-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonials-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  blockquote {
+    background-color: var(--background-secondary-color);
+    padding: 1rem;
+    border-left: 5px solid var(--primary-color);
+    font-style: italic;
+  }
+  
+  cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary-color);
+  }
+  </style>
