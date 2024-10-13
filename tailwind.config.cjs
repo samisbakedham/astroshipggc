@@ -8,12 +8,12 @@ module.exports = {
     extend: {
       colors: {
         primary: '#006400',    // Dark Green for main elements
-        secondary: '#4A4A4A',   // Earthy Gray for backgrounds
+        secondary: '#4A4A4A',   // Earthy Gray for background
         accent1: '#FF8C00',     // Bright Orange for call to actions
         accent2: '#FFD700',     // Yellow for highlights
-        background: '#2d2d2d',  // Darker neutral for background (updated for easier viewing)
-        textLight: '#FFFFFF',   // White text for dark backgrounds
-        textDark: '#e0e0e0',    // Light Grey text for readability on dark background
+        background: '#f8f9fa',  // Light neutral for background
+        textLight: '#FFFFFF',   // White text
+        textDark: '#2b2b2b',    // Dark Charcoal text
       },
       fontFamily: {
         sans: [
