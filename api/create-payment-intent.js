@@ -21,12 +21,24 @@ const handler = async (req, res) => {
       const data = JSON.parse(buf.toString());
       const { priceId } = data;
 
+      console.log('Received priceId:', priceId); // Debugging log
+
+      // Adjust the amount dynamically based on priceId if needed
+      let amount = 5000; // Default amount, update this as per your logic
+
+      if (priceId === "prod_R0vscIVM5pEp7y") {
+        amount = 5000; // $50 for Landscaping, for example
+      }
+      // Add more conditions for different services if needed
+
       // Create a PaymentIntent with the given price ID
       const paymentIntent = await stripe.paymentIntents.create({
-        amount: 5000, // Adjust the amount dynamically based on priceId if needed
+        amount: amount,
         currency: 'usd',
         payment_method_types: ['card'],
       });
+
+      console.log('Payment intent created:', paymentIntent.id); // Debugging log
 
       res.status(200).json({ clientSecret: paymentIntent.client_secret });
     } catch (error) {
