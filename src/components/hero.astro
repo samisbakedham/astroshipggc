@@ -1,105 +1,39 @@
 ---
 import { Picture } from "astro:assets";
-import artificialGrassImage from "assets/artificial-grass.jpg";
+import heroImage from "assets/construction.svg"; // Ensure this points to an image that represents your construction business
+import Link from "@components/ui/link.astro";
 ---
 
-<section id="artificial-grass" class="artificial-grass-section bg-green-50 py-20">
-  <div class="container mx-auto text-center">
-    <h2 class="text-5xl font-bold text-green-700 mb-12">Artificial Grass Installation</h2>
-    <div class="flex flex-col lg:flex-row items-center justify-center gap-16 mb-16">
-      <Picture
-        src={artificialGrassImage}
-        alt="Artificial Grass Lawn"
-        widths={[400, 800, 1200]}
-        sizes="(max-width: 800px) 100vw, 50vw"
-        loading="eager"
-        format="avif"
-        class="w-full lg:w-3/5 rounded-lg shadow-lg"
-      />
-      <div class="text-left max-w-2xl">
-        <p class="text-xl text-gray-700 mb-8 leading-relaxed">
-          Enhance the beauty and functionality of your lawn with our premium artificial grass installation services. Our synthetic grass provides a lush, green appearance all year round, without the hassle of mowing or watering.
-        </p>
-        <ul class="list-disc list-inside text-gray-800 text-lg">
-          <li class="mb-6 font-semibold">Low Maintenance: Always green without mowing or watering.</li>
-          <li class="mb-6 font-semibold">Durable & Pet-Friendly: Built to handle heavy use and perfect for pets.</li>
-          <li class="mb-6 font-semibold">Environmentally Friendly: Helps save water and reduces the need for harmful pesticides.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-16">
-      <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
-        <h3 class="text-2xl font-semibold text-green-800 mb-6">Durable & Long-Lasting</h3>
-        <p class="text-gray-700 text-lg">
-          Our artificial grass is built to last and withstand heavy use, making it ideal for families with kids or pets.
-        </p>
-      </div>
-      <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
-        <h3 class="text-2xl font-semibold text-green-800 mb-6">Low Maintenance</h3>
-        <p class="text-gray-700 text-lg">
-          Enjoy a beautiful, green lawn without the need for mowing, watering, or fertilizing. It's always ready for outdoor activities.
-        </p>
-      </div>
-      <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition transform hover:-translate-y-2">
-        <h3 class="text-2xl font-semibold text-green-800 mb-6">Eco-Friendly</h3>
-        <p class="text-gray-700 text-lg">
-          Save water and reduce your carbon footprint with our environmentally-friendly artificial grass solutions.
-        </p>
-      </div>
-    </div>
-    <div class="mt-20">
-      <a href="/contact" class="inline-block bg-green-700 text-white text-xl font-semibold py-4 px-10 rounded-full hover:bg-green-800 transition">Get a Free Quote</a>
+<main class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24 bg-background">
+  <div class="py-6 md:order-1 hidden md:block max-w-md mx-auto">
+    <Picture
+      src={heroImage}
+      alt="Walker and Cole Construction at work"
+      widths={[200, 400, 600]}
+      sizes="(max-width: 800px) 100vw, 50vw"
+      loading="eager"
+      format="avif"
+      class="w-full h-auto max-h-[300px]"
+    />
+  </div>
+  <div class="text-center lg:text-left">
+    <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-primary lg:tracking-tight xl:tracking-tighter">
+      Your One-Stop Solution for Home Services & Construction
+    </h1>
+    <p class="text-lg mt-4 text-secondary max-w-xl">
+      From major construction projects to everyday household tasks, Walker and Cole Construction offers reliable, high-quality services across Santa Barbara County.
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+      <Link
+        href="contact"
+        class="bg-accent1 text-white px-6 py-3 rounded-full font-bold inline-block hover:bg-[#E67300] hover:scale-105 transition duration-300 ease-in-out shadow-lg">
+        Get Your Free Quote
+      </Link>
+      <Link
+        href="contact"
+        class="bg-primary text-white px-6 py-3 rounded-full font-bold inline-block hover:bg-[#003531] hover:scale-105 transition duration-300 ease-in-out shadow-lg">
+        Schedule a Home Service
+      </Link>
     </div>
   </div>
-</section>
-
-<style>
-.artificial-grass-section {
-  background-color: #f0fdf4; /* Light green background to add visual contrast */
-  padding: 5rem 0;
-}
-
-.artificial-grass-section h2 {
-  font-size: 3rem;
-  color: #2f855a;
-  margin-bottom: 1.5rem;
-}
-
-.artificial-grass-section p {
-  color: #4a5568;
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-
-.artificial-grass-section .container {
-  max-width: 1200px;
-  padding: 0 2rem;
-}
-
-.artificial-grass-section img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.artificial-grass-section .bg-white {
-  background-color: #ffffff;
-}
-
-.artificial-grass-section .text-green-800 {
-  color: #22543d;
-}
-
-.artificial-grass-section .hover\\:shadow-xl:hover {
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-}
-
-.artificial-grass-section .hover\\:-translate-y-2:hover {
-  transform: translateY(-0.5rem);
-}
-
-.artificial-grass-section a {
-  text-decoration: none;
-}
-</style>
+</main>
