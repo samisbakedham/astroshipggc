@@ -2,8 +2,6 @@
 import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
-import "@fontsource-variable/inter/index.css";
-import '@fontsource-variable/bricolage-grotesque';
 
 export interface Props {
   title: string;
@@ -31,7 +29,9 @@ const makeTitle = title
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> <!-- Update this path if you have a new favicon -->
     <meta name="generator" content={Astro.generator} />
 
-    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
+    <!-- Import Montserrat from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
     <SEO
       title={makeTitle}
       description="Walker and Cole Construction offers high-quality contracting, landscaping, and construction services in Santa Barbara County."
