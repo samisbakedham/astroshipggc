@@ -17,7 +17,7 @@ module.exports = {
       },
       fontFamily: {
         sans: [
-          'Roboto',            // Use Roboto for a clean, professional look
+          'Montserrat',         // Updated to use Montserrat
           ...defaultTheme.fontFamily.sans,
         ],
       },
