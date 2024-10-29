@@ -1,6 +1,10 @@
-<section id="testimonials" class="testimonials-section bg-secondary text-textLight">
+---
+// This is the Testimonials component for Walker and Cole Construction website.
+---
+
+<section id="testimonials" class="testimonials-section">
   <div class="container">
-    <h2 class="text-accent1 font-bold text-4xl mb-8 font-sans">Client Testimonials</h2>
+    <h2>Client Testimonials</h2>
     <div class="testimonials-container">
       <blockquote>
         <p>"Walker and Cole Construction transformed our backyard into a beautiful space. Their attention to detail and quality craftsmanship is unmatched."</p>
@@ -21,12 +25,21 @@
 <style scoped>
   .testimonials-section {
     padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    color: #333;
     text-align: center;
   }
 
   .container {
     max-width: 1200px;
     margin: 0 auto;
+  }
+
+  .testimonials-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2f855a;
+    font-weight: bold;
   }
 
   .testimonials-container {
@@ -36,10 +49,9 @@
   }
 
   blockquote {
-    background-color: #4A4A4A;
-    color: #FFFFFF;
+    background-color: #fff;
     padding: 2rem;
-    border-left: 5px solid #FF8C00;
+    border-left: 5px solid #2f855a;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     font-style: italic;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -55,7 +67,7 @@
     display: block;
     margin-top: 1rem;
     font-size: 1rem;
-    color: #FFD700;
+    color: #666;
     font-weight: bold;
   }
 </style>
